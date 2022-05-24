@@ -1,0 +1,149 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Menu?>
+<?import javafx.scene.control.MenuBar?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.ProgressIndicator?>
+<?import javafx.scene.control.RadioMenuItem?>
+<?import javafx.scene.control.Spinner?>
+<?import javafx.scene.control.ToggleGroup?>
+<?import javafx.scene.control.Tooltip?>
+<?import javafx.scene.input.KeyCodeCombination?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Region?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<BorderPane fx:id="rootBorderPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="700" prefWidth="900" styleClass="root-borderpane" stylesheets="@stylesheets/lightMode.css" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="comp2211.group45.addashboard.Controller">
+   <left>
+      <VBox fx:id="leftButtonBox" alignment="TOP_CENTER" spacing="10.0" styleClass="left-button-box" BorderPane.alignment="CENTER">
+         <children>
+            <Button minHeight="35.0" minWidth="60.0" mnemonicParsing="false" onAction="#home" styleClass="left-button" wrapText="true">
+               <graphic>
+                  <Region maxHeight="30.0" maxWidth="30.0" styleClass="home-svg" />
+               </graphic>
+               <tooltip>
+                  <Tooltip text="Overview of Campaign" />
+               </tooltip>
+            </Button>
+            <Button minHeight="35.0" minWidth="60.0" mnemonicParsing="false" onAction="#detailedMetrics" styleClass="left-button" wrapText="true">
+               <graphic>
+                  <Region maxHeight="30.0" maxWidth="27.0" styleClass="info-svg" />
+               </graphic>
+               <tooltip>
+                  <Tooltip text="Detailed Metrics" />
+               </tooltip>
+            </Button>
+            <Button minHeight="35.0" minWidth="60.0" mnemonicParsing="false" onAction="#grapher" styleClass="left-button" wrapText="true">
+               <graphic>
+                  <Region maxHeight="30.0" maxWidth="27.0" rotate="90.0" styleClass="graphs-svg" />
+               </graphic>
+               <tooltip>
+                  <Tooltip text="Create Graph" />
+               </tooltip>
+            </Button>
+            <Button fx:id="save" minHeight="35.0" minWidth="60.0" mnemonicParsing="false" onAction="#save" styleClass="left-button" wrapText="true">
+               <graphic>
+                  <Region maxHeight="30.0" maxWidth="30.0" rotate="180.0" styleClass="save-svg" />
+               </graphic>
+               <tooltip>
+                  <Tooltip text="Save Current View to File" />
+               </tooltip>
+            </Button>
+            <Button fx:id="print" minHeight="35.0" minWidth="60.0" mnemonicParsing="false" onAction="#print" styleClass="left-button" wrapText="true">
+               <graphic>
+                  <Region maxHeight="30.0" maxWidth="30.0" styleClass="print-svg" />
+               </graphic>
+               <tooltip>
+                  <Tooltip text="Print Current View" />
+               </tooltip>
+            </Button>
+            <ProgressIndicator fx:id="loadingIndicator" maxHeight="40.0" maxWidth="40.0" visible="false">
+               <opaqueInsets>
+                  <Insets />
+               </opaqueInsets>
+            </ProgressIndicator>
+         </children>
+         <padding>
+            <Insets top="10.0" />
+         </padding>
+      </VBox>
+   </left>
+   <top>
+      <HBox alignment="CENTER_LEFT" styleClass="top-menu-bar" BorderPane.alignment="CENTER_LEFT">
+         <children>
+            <MenuBar>
+               <menus>
+                  <Menu mnemonicParsing="false" text="File">
+                     <items>
+                        <MenuItem mnemonicParsing="false" onAction="#handleClose" text="Close" />
+                     </items>
+                  </Menu>
+                  <Menu mnemonicParsing="false" text="Load">
+                     <items>
+                        <MenuItem mnemonicParsing="false" onAction="#openSingle" text="Single">
+                           <accelerator>
+                              <KeyCodeCombination alt="UP" code="O" control="DOWN" meta="UP" shift="UP" shortcut="UP" />
+                           </accelerator>
+                        </MenuItem>
+                        <MenuItem mnemonicParsing="false" onAction="#openComparison" text="Comparison" />
+                     </items>
+                  </Menu>
+                  <Menu mnemonicParsing="false" text="Settings">
+                     <items>
+                        <Menu mnemonicParsing="false" text="Theme">
+                           <items>
+                              <RadioMenuItem mnemonicParsing="false" onAction="#lightMode" selected="true" text="Light Theme">
+                                 <toggleGroup>
+                                    <ToggleGroup fx:id="theme" />
+                                 </toggleGroup>
+                              </RadioMenuItem>
+                              <RadioMenuItem mnemonicParsing="false" onAction="#darkMode" text="Dark Theme" toggleGroup="$theme" />
+                           </items>
+                        </Menu>
+                        <Menu mnemonicParsing="false" text="Text Size">
+                           <items>
+                              <MenuItem mnemonicParsing="false" onAction="#smallText" text="Small" />
+                              <MenuItem mnemonicParsing="false" onAction="#mediumText" text="Medium" />
+                              <MenuItem mnemonicParsing="false" onAction="#largeText" text="Large" />
+                           </items>
+                        </Menu>
+                     </items>
+                  </Menu>
+                  <Menu mnemonicParsing="false" text="Bounce Definition">
+                     <items>
+                        <RadioMenuItem fx:id="bounceSinglePage" mnemonicParsing="false" onAction="#bounceDefnHandler" selected="true" text="Single Page Viewed">
+                           <toggleGroup>
+                              <ToggleGroup fx:id="bounceDef" />
+                           </toggleGroup>
+                        </RadioMenuItem>
+                        <RadioMenuItem fx:id="bounceTimePeriod" mnemonicParsing="false" onAction="#bounceDefnHandler" text="Time Spent (Seconds)" toggleGroup="$bounceDef">
+                           <graphic>
+                              <Spinner fx:id="bounceTimeSpinner" disable="true" editable="true" maxWidth="80.0" prefWidth="80.0" />
+                           </graphic>
+                        </RadioMenuItem>
+                     </items>
+                  </Menu>
+               </menus>
+            </MenuBar>
+         </children>
+      </HBox>
+   </top>
+   <center>
+      <VBox alignment="CENTER" prefHeight="200.0" prefWidth="100.0" spacing="20.0" BorderPane.alignment="CENTER">
+         <children>
+            <Text strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-font-weight: bold;" text="Ad Dashboard" textAlignment="CENTER" wrappingWidth="815.0">
+               <font>
+                  <Font size="60.0" />
+               </font>
+            </Text>
+            <Region maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="70.0" prefWidth="70.0" styleClass="open-svg" />
+            <Text strokeType="OUTSIDE" strokeWidth="0.0" styleClass="textClassBold" text="Drag and drop a campaign zip file into this window, or open a campaign with: &quot;Load -&gt; [Single, Comparison]&quot;" wrappingWidth="300.0" />
+         </children>
+      </VBox>
+   </center>
+</BorderPane>

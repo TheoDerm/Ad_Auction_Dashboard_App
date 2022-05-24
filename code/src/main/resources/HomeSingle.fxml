@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<VBox prefHeight="200.0" prefWidth="100.0" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Impressions">
+         <font>
+            <Font name="System Bold" size="16.0" />
+         </font>
+      </Text>
+      <Text fx:id="numImpressionsText" strokeType="OUTSIDE" strokeWidth="0.0" text="Value" />
+      <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Clicks">
+         <font>
+            <Font name="System Bold" size="16.0" />
+         </font>
+      </Text>
+      <Text fx:id="numClicksText" strokeType="OUTSIDE" strokeWidth="0.0" text="Value" />
+      <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Uniques">
+         <font>
+            <Font name="System Bold" size="16.0" />
+         </font>
+      </Text>
+      <Text fx:id="numUniquesText" strokeType="OUTSIDE" strokeWidth="0.0" text="Value" />
+      <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Bounces">
+         <font>
+            <Font name="System Bold" size="16.0" />
+         </font>
+      </Text>
+      <Text fx:id="numBouncesText" strokeType="OUTSIDE" strokeWidth="0.0" text="Value" />
+      <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Conversions">
+         <font>
+            <Font name="System Bold" size="16.0" />
+         </font>
+      </Text>
+      <Text fx:id="numConversionsText" strokeType="OUTSIDE" strokeWidth="0.0" text="Value" />
+      <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Total Cost">
+         <font>
+            <Font name="System Bold" size="16.0" />
+         </font>
+      </Text>
+      <Text fx:id="totalCostText" strokeType="OUTSIDE" strokeWidth="0.0" text="Value" />
+      <Text strokeType="OUTSIDE" strokeWidth="0.0" text="CTR">
+         <font>
+            <Font name="System Bold" size="16.0" />
+         </font>
+      </Text>
+      <Text fx:id="ctrText" strokeType="OUTSIDE" strokeWidth="0.0" text="Value" />
+      <Text strokeType="OUTSIDE" strokeWidth="0.0" text="CPA">
+         <font>
+            <Font name="System Bold" size="16.0" />
+         </font>
+      </Text>
+      <Text fx:id="cpaText" strokeType="OUTSIDE" strokeWidth="0.0" text="Value" />
+      <Text strokeType="OUTSIDE" strokeWidth="0.0" text="CPC">
+         <font>
+            <Font name="System Bold" size="16.0" />
+         </font>
+      </Text>
+      <Text fx:id="cpcText" strokeType="OUTSIDE" strokeWidth="0.0" text="Value" />
+      <Text strokeType="OUTSIDE" strokeWidth="0.0" text="CPM">
+         <font>
+            <Font name="System Bold" size="16.0" />
+         </font>
+      </Text>
+      <Text fx:id="cpmText" strokeType="OUTSIDE" strokeWidth="0.0" text="Value" />
+      <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Bounce Rate">
+         <font>
+            <Font name="System Bold" size="16.0" />
+         </font>
+      </Text>
+      <Text fx:id="bounceRateText" strokeType="OUTSIDE" strokeWidth="0.0" text="Value" />
+   </children>
+</VBox>
