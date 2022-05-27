@@ -3,7 +3,3 @@ An application for evaluating the success of advertising campaigns. It displays 
 
 # Project information
 The project was developed as part of the Software Engineering Group Project module of Southampton University.
-
-# Code Authors
-Theo Dermitzakis, Alex Underwood, Oliver Mead, Mohammed Wasif Haque, Callum Masson, Jez O'Donnell.
-
